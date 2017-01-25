@@ -1,4 +1,4 @@
-﻿var msg = '';
+﻿//var msg = '';
 
 document.getElementById('search').onkeydown = function (event) {
     if (event.keyCode === 13) {
@@ -7,18 +7,18 @@ document.getElementById('search').onkeydown = function (event) {
 };
 
 function getSearch() {
-    var data = document.getElementById('search').value;
+    var lookUp = document.getElementById('search').value;
 
     url = "https://en.wikipedia.org";
 
     $.ajax({
-        url: "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&callback=?&search=" + data,
+        url: "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&callback=?&search=" + lookUp,
         dataType: 'json',
         type: 'GET',
         headers: {'FCC Wikiviewer': 'datadetectiveagent007@gmail.com'},
-        success: function (msg)
+        success: function(msg)
         {
-            console.log(msg);
+            printStr(msg);
         }
     });
 }
@@ -27,8 +27,16 @@ function getRandom() {
 
 }
 
-function printStr(msg) {
-    console.log(JSON.stringify(msg, null, 3));
-}
+function printStr(result) {
+    var list = document.createElement('ul');                    //create ul
+    list.setAttribute('id', 'wikiUl');                          //define ul element
+    document.getElementById('result').appendChild(list);          //Add Element to Documnent
 
-//JSON.stringify(msg, null, 3)
+    result[1].forEach(function (element) {                      //cycle through list of results
+        var item = document.createElement('li');                //create li for each result
+        var title = document.createTextNode(element);           //create text to each li
+        item.appendChild(title);                                //add text to each li
+        document.getElementById('wikiUl').appendChild(item);    //add each li to ul
+    });
+    console.log(JSON.stringify(result, null, 3));
+}

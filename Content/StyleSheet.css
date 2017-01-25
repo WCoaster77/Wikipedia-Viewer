@@ -21,3 +21,8 @@ main {
 .input-group {
     border-radius: 16px;
 }
+
+ul {
+    list-style-type: none;
+    font-size: larger;
+}
