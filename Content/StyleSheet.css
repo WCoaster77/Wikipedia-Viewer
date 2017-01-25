@@ -5,12 +5,12 @@
 body {
     display: flex;
     align-items: center;
-    background-color: lightsalmon;
+    background-color: #4d83ce;
     margin: 0;
 }
 
 main {
-    flex: 1 1 100%;
+    flex: 1 1 auto;
     display: flex;
     align-content: center;
     flex-direction: column;
@@ -18,11 +18,16 @@ main {
     font-size: 2em;
 }
 
+ul {
+    list-style-type: none;
+    font-size: larger;
+}
+
 .input-group {
     border-radius: 16px;
 }
 
-ul {
-    list-style-type: none;
-    font-size: larger;
+#buttons {
+    display: flex;
+    justify-content: space-around;
 }
