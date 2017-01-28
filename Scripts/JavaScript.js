@@ -28,15 +28,21 @@ function getRandom() {
 }
 
 function printStr(result) {
+    $('ul').remove();
     var list = document.createElement('ul');                    //create ul
     list.setAttribute('id', 'wikiUl');                          //define ul element
-    document.getElementById('result').appendChild(list);          //Add Element to Documnent
+    document.getElementById('result').appendChild(list);        //Add Element to Documnent
 
-    result[1].forEach(function (element) {                      //cycle through list of results
+    result[1].forEach(function (element, index) {               //cycle through list of results
         var item = document.createElement('li');                //create li for each result
-        var title = document.createTextNode(element);           //create text to each li
-        item.appendChild(title);                                //add text to each li
-        item.href = result[3][1];   //***** Add URL here. Will need to loop through result[3] and append to text or container.
+        var link = document.createElement('a');                 //create anchoe for url
+        var title = element + ': ' + result[2][index];           //create text for each li
+        link.setAttribute('href', result[3][index]);            //Add URL 
+        link.setAttribute('target', '_blank');
+        link.innerHTML = title;
+        item.appendChild(link);                                //add text to each li
         document.getElementById('wikiUl').appendChild(item);    //add each li to ul
     });
+
+    //console.log(JSON.stringify(result, null, 3));
 }
