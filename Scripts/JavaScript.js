@@ -1,4 +1,4 @@
-﻿//var msg = '';
+﻿document.getElementById('search').focus();
 
 document.getElementById('search').onkeydown = function (event) {
     if (event.keyCode === 13) {
@@ -36,7 +36,7 @@ function printStr(result) {
         var item = document.createElement('li');                //create li for each result
         var title = document.createTextNode(element);           //create text to each li
         item.appendChild(title);                                //add text to each li
+        item.href = result[3][1];   //***** Add URL here. Will need to loop through result[3] and append to text or container.
         document.getElementById('wikiUl').appendChild(item);    //add each li to ul
     });
-    console.log(JSON.stringify(result, null, 3));
 }

@@ -9,6 +9,12 @@ body {
     margin: 0;
 }
 
+.flex-container {
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: space-around;
+}
+
 main {
     flex: 1 1 auto;
     display: flex;
@@ -18,16 +24,35 @@ main {
     font-size: 2em;
 }
 
+.bg-warning {
+    padding: 10px;
+    border-radius: 16px;
+    font-size: larger;
+}
+
+.btn {
+    margin: 20px;
+    font-size: larger;
+    border-radius: 10px;
+}
+
+#search {
+    padding: 10px;
+    border-radius: 16px;
+    height: auto;
+    background-color: whitesmoke;
+    font-size: larger;
+}
+
 ul {
     list-style-type: none;
     font-size: larger;
 }
 
-.input-group {
-    border-radius: 16px;
-}
+li {
 
-#buttons {
-    display: flex;
-    justify-content: space-around;
+    background-color: whitesmoke;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
 }
