@@ -19,26 +19,24 @@
 
 </head>
 <body>
-    <div class="container-fluid">
-        <main>
-            <div class="input-group-lg">
-                <p class="bg-warning" id='info'>What Can Wikipedia Share Today?</p>
-                <input class="form-control" id="search" type="text" placeholder="Enter a Wikipedia Topic to Search" />
+    <main class="container-fluid">
+        <div class="input-group-lg">
+            <p class="bg-warning" id='info'>What Can Wikipedia Share Today?</p>
+            <input class="form-control" id="search" type="text" placeholder="Enter a Wikipedia Topic to Search" />
 
-                <div class="flex-container" id="buttons">
-                    <div class="btn btn-primary" onclick="getSearch()">
-                        Search Wiki
-                    </div>
-                    <div class="btn btn-primary" onclick="getRandom()">
-                        Random Wiki Topic
-                    </div>
+            <div class="flex-container" id="buttons">
+                <div class="btn btn-primary" onclick="getSearch()">
+                    Search Wiki
+                </div>
+                <div class="btn btn-primary" onclick="getRandom()">
+                    Random Wiki Topic
                 </div>
             </div>
+        </div>
 
-            <div id="result">
-            </div>
-        </main>
-    </div>
+        <div id="result">
+        </div>
+    </main>
     <script src="Scripts/JavaScript.js"></script>
 </body>
 </html>
